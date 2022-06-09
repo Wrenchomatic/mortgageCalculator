@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mortage Users</title>
+    <link rel="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Loan</th>
+        <th scope="col">Interest</th>
+        <th scope="col">years</th>
+        <th scope="col">Monthly Payment</th>
+    </tr>
+    </thead>
+    <tbody>
+        <!--/*@thymesVar id="customers" type=""*/-->
+        <tr th:each="customer : ${customers}">
+            <!--/*@thymesVar id="name" type=""*/-->
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.loan}"></td>
+            <td th:text="${customer.interest}"></td>
+            <td th:text="${customer.years}"></td>
+            <td th:text="${customer.monthPayment}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/mortgage}">Create a new Mortgage</a>
+
+</body>
+</html>
